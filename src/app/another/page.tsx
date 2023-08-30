@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import Link from "next/link";
 
-export default function Home() {
+export default function AnotherPage() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -41,8 +41,8 @@ export default function Home() {
 
       <div className={styles.grid}>
         <Link
-            href="/"
-            className={styles.card}
+          href="/"
+          className={styles.card}
         >
           <h2>
             Landing page
