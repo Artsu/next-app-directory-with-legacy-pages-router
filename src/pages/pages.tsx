@@ -6,39 +6,6 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] })
 
-const fetchMock = (path: string) => {
-    console.log("Fetch mock hit with path " + path);
-    return {
-        path,
-    }
-}
-
-export async function getStaticPaths() {
-
-    return {
-        paths: [
-            {
-                params: {
-                    wildcard: ['pages'],
-                },
-            },
-            {
-                params: {
-                    wildcard: ['another-pages'],
-                },
-            },
-        ],
-        fallback: false,
-    };
-}
-
-export async function getStaticProps(context: { params: { wildcard: string } }) {
-    const path = context.params.wildcard;
-    return {
-        props: fetchMock(path)
-    };
-}
-
 export default function Home() {
     return (
         <>
